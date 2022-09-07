@@ -1,5 +1,5 @@
 NAME = libft.a
-FUNCS = ft_isalpha ft_isalnum ft_isdigit
+FUNCS = ft_isalpha ft_isalnum ft_isdigit ft_isascii
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))
 CC = gcc
@@ -20,3 +20,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+exec: re
+	gcc -Wall -Werror -Wall main.c libft.a && clear && ./a.out

@@ -1,5 +1,5 @@
 NAME = libft.a
-FUNCS = ft_isalpha ft_isalnum ft_isdigit ft_isascii ft_isprint
+FUNCS = ft_isalpha ft_isalnum ft_isdigit ft_isascii ft_isprint ft_strlen
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))
 CC = gcc

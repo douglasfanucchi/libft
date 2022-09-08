@@ -11,6 +11,7 @@ FUNCS = ft_isalpha \
 		ft_memmove \
 		ft_toupper \
 		ft_tolower \
+		ft_strchr \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

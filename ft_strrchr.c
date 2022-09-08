@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	first_char = *s;
 	while (*s)
 		s++;
+	if ((unsigned char) c == '\0')
+		return ((char *)s);
 	while (*s != first_char && *s != c)
-	{
 		s--;
-	}
-	return ((char *)s);
+	if (*s == (unsigned char) c)
+		return ((char *)s);
+	return (NULL);
 }

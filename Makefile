@@ -6,7 +6,8 @@ FUNCS = ft_isalpha \
 		ft_isprint \
 		ft_strlen \
 		ft_memset \
-		ft_bzero
+		ft_bzero \
+		ft_memcpy \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

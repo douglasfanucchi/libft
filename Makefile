@@ -9,6 +9,7 @@ FUNCS = ft_isalpha \
 		ft_bzero \
 		ft_memcpy \
 		ft_memmove \
+		ft_toupper \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

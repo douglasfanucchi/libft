@@ -13,6 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#ifndef NULL
+#define NULL (void *)0
+#endif
+
 #include <stdio.h>
 #include <string.h>
 

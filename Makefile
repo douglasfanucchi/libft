@@ -13,6 +13,7 @@ FUNCS = ft_isalpha \
 		ft_tolower \
 		ft_strchr \
 		ft_strrchr \
+		ft_strncmp \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

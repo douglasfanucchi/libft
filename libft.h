@@ -13,13 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#ifndef NULL
-#define NULL (void *)0
-#endif
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -43,5 +39,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

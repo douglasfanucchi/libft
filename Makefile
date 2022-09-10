@@ -21,6 +21,7 @@ FUNCS = ft_isalpha \
 		ft_strlcat \
 		ft_calloc \
 		ft_strdup \
+		ft_memcmp \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

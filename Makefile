@@ -27,6 +27,7 @@ FUNCS = ft_isalpha \
 		ft_putchar_fd \
 		ft_putstr_fd \
 		ft_putendl_fd \
+		ft_itoa \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

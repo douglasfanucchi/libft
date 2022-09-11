@@ -23,6 +23,7 @@ FUNCS = ft_isalpha \
 		ft_strdup \
 		ft_memcmp \
 		ft_strmapi \
+		ft_striteri \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

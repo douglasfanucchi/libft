@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -42,5 +43,6 @@ char	*ft_strdup(const char *s);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 
 #endif

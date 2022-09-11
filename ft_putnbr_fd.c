@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_recursive(int n, int fd)
+static void	ft_putnbr_recursive(int n, int fd)
 {
 	if (n / 10 == 0)
 	{

@@ -14,10 +14,7 @@
 
 static bool	ft_forbidden_char(char c, char const *set)
 {
-	while (*set)
-		if (*set++ == c)
-			return (true);
-	return (false);
+	return (ft_strchr(set, c));
 }
 
 static size_t	ft_start_index(char const *s, char const *set)

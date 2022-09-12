@@ -42,15 +42,15 @@ static size_t	ft_forbidden_chars_at_end(char const *s, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	size;
-	size_t	fobirdden_chars_at_start;
+	size_t	fobidden_chars_at_start;
 	size_t	forbidden_chars_at_end;
 	size_t	s1_len;
 
 	s1_len = ft_strlen(s1);
-	fobirdden_chars_at_start = ft_forbidden_chars_at_start(s1, set);
-	if (fobirdden_chars_at_start == s1_len)
+	fobidden_chars_at_start = ft_forbidden_chars_at_start(s1, set);
+	if (fobidden_chars_at_start == s1_len)
 		return ((char *)ft_calloc(1, sizeof(char)));
 	forbidden_chars_at_end = ft_forbidden_chars_at_end(s1, set);
-	size = s1_len - fobirdden_chars_at_start - forbidden_chars_at_end;
-	return (ft_substr(s1, fobirdden_chars_at_start, size));
+	size = s1_len - fobidden_chars_at_start - forbidden_chars_at_end;
+	return (ft_substr(s1, fobidden_chars_at_start, size));
 }

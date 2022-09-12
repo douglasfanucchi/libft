@@ -12,72 +12,48 @@
 
 #include "libft.h"
 
+static bool	ft_forbidden_char(char c, char const *set)
+{
+	while (*set)
+		if (*set++ == c)
+			return (true);
+	return (false);
+}
+
 static size_t	ft_start_index(char const *s, char const *set)
 {
-	size_t		start_index;
-	char const	*trav_set;
-	bool		found;
-	bool		should_exit;
+	char const	*s_trav;
 
-	start_index = 0;
-	while (*s)
-	{
-		trav_set = set;
-		should_exit = false;
-		found = false;
-		while (*trav_set && !should_exit)
-		{
-			if (*trav_set++ == *s)
-			{
-				found = true;
-				should_exit = true;
-				start_index++;
-			}
-		}
-		if (!found)
-			break ;
-		s++;
-	}
-	return (start_index);
+	s_trav = s;
+	while (*s_trav && ft_forbidden_char(*s_trav, set))
+		s_trav++;
+	return ((size_t)(s_trav - s));
 }
 
-static size_t	ft_end_index(char const *head_s, char const *set)
+static size_t	ft_end_index(char const *s, char const *set)
 {
-	size_t		end_index;
-	char const	*trav_set;
-	char const	*tail_s;
-	bool		found;
-	bool		should_exit;
+	char const	*tail;
+	char const	*tail_trav;
 
-	end_index = ft_strlen(head_s) - 1;
-	tail_s = end_index + head_s;
-	while (tail_s != head_s)
-	{
-		trav_set = set;
-		found = false;
-		should_exit = false;
-		while (*trav_set && !should_exit)
-		{
-			if (*trav_set++ == *tail_s)
-			{
-				found = true;
-				should_exit = true;
-				end_index--;
-			}
-		}
-		if (!found)
-			break ;
-		tail_s--;
-	}
-	return (end_index);
+	tail = s + ft_strlen(s) - 1;
+	tail_trav = tail;
+	while (*tail_trav && ft_forbidden_char(*tail_trav, set))
+		tail_trav--;
+	return ((size_t)(tail - tail_trav));
 }
 
-char *ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	end_index;
+	size_t	size;
 	size_t	start_index;
-	
-	end_index = ft_end_index(s, set);
-	start_index = ft_start_index(s, set);
-	return (ft_substr(s, start_index, end_index - start_index + 1));
+	size_t	end_index;
+	size_t	s1_len;
+
+	s1_len = ft_strlen(s1);
+	start_index = ft_start_index(s1, set);
+	if (start_index == s1_len)
+		return ((char *)ft_calloc(1, sizeof(char)));
+	end_index = ft_end_index(s1, set);
+	size = s1_len - start_index - end_index;
+	return (ft_substr(s1, start_index, size));
 }

@@ -17,7 +17,7 @@ static bool	ft_forbidden_char(char c, char const *set)
 	return (ft_strchr(set, c));
 }
 
-static size_t	ft_start_index(char const *s, char const *set)
+static size_t	ft_forbidden_chars_at_start(char const *s, char const *set)
 {
 	char const	*s_trav;
 
@@ -27,7 +27,7 @@ static size_t	ft_start_index(char const *s, char const *set)
 	return ((size_t)(s_trav - s));
 }
 
-static size_t	ft_end_index(char const *s, char const *set)
+static size_t	ft_forbidden_chars_at_end(char const *s, char const *set)
 {
 	char const	*tail;
 	char const	*tail_trav;
@@ -42,15 +42,15 @@ static size_t	ft_end_index(char const *s, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	size;
-	size_t	start_index;
-	size_t	end_index;
+	size_t	fobirdden_chars_at_start;
+	size_t	forbidden_chars_at_end;
 	size_t	s1_len;
 
 	s1_len = ft_strlen(s1);
-	start_index = ft_start_index(s1, set);
-	if (start_index == s1_len)
+	fobirdden_chars_at_start = ft_forbidden_chars_at_start(s1, set);
+	if (fobirdden_chars_at_start == s1_len)
 		return ((char *)ft_calloc(1, sizeof(char)));
-	end_index = ft_end_index(s1, set);
-	size = s1_len - start_index - end_index;
-	return (ft_substr(s1, start_index, size));
+	forbidden_chars_at_end = ft_forbidden_chars_at_end(s1, set);
+	size = s1_len - fobirdden_chars_at_start - forbidden_chars_at_end;
+	return (ft_substr(s1, fobirdden_chars_at_start, size));
 }

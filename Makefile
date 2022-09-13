@@ -32,6 +32,7 @@ FUNCS = ft_isalpha \
 		ft_substr \
 		ft_strjoin \
 		ft_strtrim \
+		ft_split \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))

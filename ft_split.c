@@ -12,63 +12,56 @@
 
 #include "libft.h"
 
-static size_t	occurrences_qty(char const *s, char c)
+static size_t	ft_rows_qty(char const *s, char c)
 {
-	size_t	qty;
-	char	*s_trav;
-	char	*next_occurrence;
+	size_t	rows;
 
-	if (c == '\0')
-		return (1);
-	qty = 0;
-	if (*s == c)
-		qty++;
-	s_trav = (char *)s + 1;
-	while (*s_trav)
+	rows = 1;
+	while (*s)
 	{
-		next_occurrence = ft_strchr(s_trav, c);
-		if (next_occurrence == NULL)
-			break ;
-		s_trav = next_occurrence + 1;
-		qty++;
+		if (*s == c)
+		{
+			while (*s == c)
+				s++;
+			rows++;
+		}
+		s++;
 	}
-	return (qty);
+	return (rows);
 }
 
-static size_t	*ft_index_occurrences(char const *s, char c, size_t qty)
+char	**ft_split(char const *s, char c)
 {
+	char		**rows;
 	char const	*s_trav;
-	char const	*next_occurrence;
-	size_t		*occurrences;
+	char const	*head;
+	char const	*trimmed;
 
-	if (qty == 0)
+	trimmed = ft_strtrim(s, &c);
+	head = trimmed;
+	s_trav = trimmed;
+	rows = (char **)ft_calloc(ft_rows_qty(trimmed, c) + 1, sizeof(char *));
+	if (!rows)
 		return (NULL);
-	occurrences = (size_t *)ft_calloc(qty, sizeof(size_t));
-	if (!occurrences)
-		return (NULL);
-	if (*s == c)
-		*occurrences = 0;
-	s_trav = s + 1;
 	while (*s_trav)
 	{
-		next_occurrence = ft_strchr(s_trav, c);
-		if (next_occurrence == NULL)
-			break ;
-		*occurrences = (size_t)(next_occurrence - s);
-		occurrences++;
-		s_trav = next_occurrence + 1;
+		if (*s_trav == c)
+		{
+			*rows++ = ft_substr(trimmed, head - trimmed, s_trav - head);
+			while (*s_trav == c)
+				s_trav++;
+			head = s_trav;
+		}
+		s_trav++;
 	}
-	return (occurrences - qty);
+	*rows++ = (char *) head;
+	*(rows + 1) = NULL;
+	return (rows - ft_rows_qty(trimmed, c));
 }
-
-// char	**ft_split(char const *s, char c)
-// {
-// }
 
 int	main()
 {
-	char	*s = "douglas fanucchi";
-	char	c = 'x';
-	size_t	qty = occurrences_qty(s, c);
-	size_t	*indexes = ft_index_occurrences(s, c, qty);
+	char **rows = ft_split("-do-uglas-fan-ucchi-", '-');
+	while (*rows)
+		printf("%s\n", *rows++);
 }

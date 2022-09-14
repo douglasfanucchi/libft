@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <stdint.h>
 
 enum e_state {
 	OUT,

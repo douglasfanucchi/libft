@@ -58,10 +58,3 @@ char	**ft_split(char const *s, char c)
 	*(rows + 1) = NULL;
 	return (rows - ft_rows_qty(trimmed, c));
 }
-
-int	main()
-{
-	char **rows = ft_split("-do-uglas-fan-ucchi-", '-');
-	while (*rows)
-		printf("%s\n", *rows++);
-}

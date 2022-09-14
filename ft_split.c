@@ -6,62 +6,77 @@
 /*   By: dfanucch <dfanucch@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 10:15:14 by dfanucch          #+#    #+#             */
-/*   Updated: 2022/09/13 10:15:15 by dfanucch         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:35:30 by dfanucch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_rows_qty(char const *s, char c)
+static char	*ft_strndup(const char *s1, size_t n)
 {
-	size_t	rows;
+	char	*result;
 
-	rows = 1;
-	while (*s)
+	result = ft_calloc(n + 1, sizeof(char));
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, s1, n + 1);
+	return (result);
+}
+
+size_t	ft_string_count(char const *s, char c)
+{
+	size_t		sc;
+	char const	*trav_s;
+	t_state		state;
+
+	sc = 0;
+	trav_s = s;
+	state = OUT;
+	while (*trav_s)
 	{
-		if (*s == c)
+		if (*trav_s == c)
+			state = OUT;
+		else if (state == OUT)
 		{
-			while (*s == c)
-				s++;
-			rows++;
+			state = IN;
+			sc++;
 		}
-		s++;
+		trav_s++;
 	}
-	return (rows);
+	return (sc);
+}
+
+size_t	ft_string_len(char const *s, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char		**rows;
-	char const	*s_trav;
-	char const	*head;
-	char const	*trimmed;
+	char	**strings;
+	size_t	sc;
+	size_t	i;
+	size_t	walked;
+	size_t	len;
 
-	trimmed = ft_strtrim(s, &c);
-	head = trimmed;
-	s_trav = trimmed;
-	rows = (char **)ft_calloc(ft_rows_qty(trimmed, c) + 1, sizeof(char *));
-	if (!rows)
-		return (NULL);
-	while (*s_trav)
+	i = 0;
+	walked = 0;
+	sc = ft_string_count(s, c);
+	strings = (char **)ft_calloc(sc + 1, sizeof(char *));
+	while (i < sc)
 	{
-		if (*s_trav == c)
-		{
-			*rows++ = ft_substr(trimmed, head - trimmed, s_trav - head);
-			while (*s_trav == c)
-				s_trav++;
-			head = s_trav;
-		}
-		s_trav++;
+		while (s[walked] == c)
+			walked++;
+		len = ft_string_len(s + walked, c);
+		strings[i] = ft_strndup(s + walked, len);
+		walked += len;
+		i++;
 	}
-	*rows++ = (char *) head;
-	*(rows + 1) = NULL;
-	return (rows - ft_rows_qty(trimmed, c));
-}
-
-int	main()
-{
-	char **rows = ft_split("-do-uglas-fan-ucchi-", '-');
-	while (*rows)
-		printf("%s\n", *rows++);
+	strings[i] = NULL;
+	return (strings);
 }

@@ -14,11 +14,17 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
 # include <stdbool.h>
 # include <limits.h>
+
+enum e_state {
+	OUT,
+	IN
+};
+
+typedef enum e_state	t_state;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

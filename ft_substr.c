@@ -21,7 +21,7 @@ static size_t   ft_substr_len(char const *s, unsigned int start, size_t size)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 			return (substr_len);
-	while (substr_len < size && s[substr_len])
+	while (substr_len < size && s[substr_len + start])
 			substr_len++;
 	return (substr_len);
 }

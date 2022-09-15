@@ -16,7 +16,7 @@ static char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*result;
 
-	result = ft_calloc(n + 1, sizeof(char));
+	result = (char *)ft_calloc(n + 1, sizeof(char));
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, s1, n + 1);
@@ -34,13 +34,13 @@ size_t	ft_string_count(char const *s, char c)
 	state = OUT;
 	while (*trav_s)
 	{
-		if (*trav_s == c)
-			state = OUT;
-		else if (state == OUT)
+		if (*trav_s != c && state == OUT)
 		{
-			state = IN;
 			sc++;
+			state = IN;
 		}
+		else if (*trav_s == c)
+			state = OUT;
 		trav_s++;
 	}
 	return (sc);
@@ -56,9 +56,20 @@ size_t	ft_string_len(char const *s, char c)
 	return (len);
 }
 
+void	*ft_free_words(char **words, size_t i)
+{
+	while (i > 0)
+	{
+		free(words[i]);
+		i--;
+	}
+	free(words[i]);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**strings;
+	char	**words;
 	size_t	sc;
 	size_t	i;
 	size_t	walked;
@@ -67,16 +78,20 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	walked = 0;
 	sc = ft_string_count(s, c);
-	strings = (char **)ft_calloc(sc + 1, sizeof(char *));
+	words = (char **)ft_calloc(sc + 1, sizeof(char *));
+	if (!words)
+		return (NULL);
 	while (i < sc)
 	{
 		while (s[walked] == c)
 			walked++;
 		len = ft_string_len(s + walked, c);
-		strings[i] = ft_strndup(s + walked, len);
+		words[i] = ft_strndup(s + walked, len);
+		if (!words[i])
+			return (ft_free_words(words, i));
 		walked += len;
 		i++;
 	}
-	strings[i] = NULL;
-	return (strings);
+	words[i] = NULL;
+	return (words);
 }

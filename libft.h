@@ -14,10 +14,9 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <string.h>
 # include <stdlib.h>
+# include <stddef.h>
 # include <stdbool.h>
-# include <limits.h>
 # include <stdint.h>
 
 enum e_state {

@@ -33,8 +33,10 @@ char	**ft_create(char const *s, char c, size_t index)
 	if (!list[index])
 	{
 		while (list[index])
+		{
+			list[index] = NULL;
 			free(list[index++]);
-		free(list);
+		}
 	}
 	return (list);
 }

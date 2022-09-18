@@ -12,28 +12,22 @@
 
 #include "libft.h"
 
-static void	ft_putnbr_recursive(int n, int fd)
-{
-	if (n / 10 == 0)
-	{
-		ft_putchar_fd(n % 10 + '0', fd);
-		return ;
-	}
-	ft_putnbr_recursive(n / 10, fd);
-	ft_putchar_fd(n % 10 + '0', fd);
-}
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n < 0)
+	if (n >= 0 && n < 10)
+	{
+		ft_putchar_fd(n + '0', fd);
+		return ;
+	}
+	if (n > -10 && n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		if (n == -2147483648)
-		{
-			ft_putchar_fd('2', fd);
-			n += 2000000000;
-		}
-		n *= -1;
+		ft_putchar_fd(n * -1 + '0', fd);
+		return ;
 	}
-	ft_putnbr_recursive(n, fd);
+	ft_putnbr_fd(n / 10, fd);
+	if (n < 0)
+		ft_putchar_fd(n % 10 * -1 + '0', fd);
+	else
+		ft_putchar_fd(n % 10 + '0', fd);
 }

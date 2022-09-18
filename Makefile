@@ -40,6 +40,7 @@ BONUS_FUNCS =	ft_lstnew \
 				ft_lstadd_front \
 				ft_lstsize \
 				ft_lstlast \
+				ft_lstadd_back \
 
 BONUS_SRCS = $(addsuffix .c, $(BONUS_FUNCS))
 BONUS_OBJECTS = $(addsuffix .o, $(BONUS_FUNCS))

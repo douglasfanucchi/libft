@@ -36,6 +36,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)ft_calloc(substr_len + 1, sizeof(char));
 	if (substr == NULL)
 		return (NULL);
+	if (!substr_len)
+		return (substr);
 	i = 0;
 	while (s[start] && i < substr_len)
 		substr[i++] = s[start++];

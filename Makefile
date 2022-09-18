@@ -36,10 +36,20 @@ FUNCS = ft_isalpha \
 
 SRCS = $(addsuffix .c, $(FUNCS))
 OBJECTS = $(addsuffix .o, $(FUNCS))
+BONUS_FUNCS = ft_lstnew \
+
+BONUS_SRCS = $(addsuffix .c, $(BONUS_FUNCS))
+BONUS_OBJECTS = $(addsuffix .o, $(BONUS_FUNCS))
 CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
+
+bonus: $(BONUS_OBJECTS)
+	ar -rc $(NAME) $(BONUS_OBJECTS)
+
+$(BONUS_OBJECTS): $(BONUS_SRCS)
+	$(CC) $(CCFLAGS) -c $(BONUS_SRCS)
 
 $(NAME): $(OBJECTS)
 	ar -rc $(NAME) $(OBJECTS)
@@ -48,7 +58,7 @@ $(OBJECTS): $(SRCS)
 	$(CC) $(CCFLAGS) -c $(SRCS)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 	rm -f $(NAME)

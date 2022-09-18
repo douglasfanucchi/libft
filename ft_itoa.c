@@ -30,29 +30,26 @@ static size_t	ft_nbrlen(int n)
 static void	ft_fill_numbers(char *result, int n, size_t nlen)
 {
 	size_t	index;
-	char	is_negative;
+	int		is_negative;
 
-	index = nlen;
+	is_negative = 0;
 	if (n < 0)
-	{
-		if (n == -2147483648)
-		{
-			result[1] = '2';
-			n += 2000000000;
-		}
 		is_negative = 1;
-		n *= -1;
-	}
-	result[index] = '\0';
+	index = nlen;
+	result[index--] = '\0';
 	while (index > 0)
 	{
-		if (!result[index - 1])
-			result[index - 1] = n % 10 + '0';
-		index--;
+		if (n < 0)
+			result[index] = n % 10 * -1 + '0';
+		else
+			result[index] = n % 10 + '0';
 		n /= 10;
+		index--;
 	}
 	if (is_negative)
-		result[0] = '-';
+		result[index] = '-';
+	else
+		result[index] = n + '0';
 }
 
 char	*ft_itoa(int n)

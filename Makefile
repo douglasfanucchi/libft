@@ -48,7 +48,7 @@ BONUS_FUNCS =	ft_lstnew \
 
 BONUS_SRCS = $(addsuffix .c, $(BONUS_FUNCS))
 BONUS_OBJECTS = $(addsuffix .o, $(BONUS_FUNCS))
-CC = gcc
+CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)

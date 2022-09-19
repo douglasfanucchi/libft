@@ -44,6 +44,7 @@ BONUS_FUNCS =	ft_lstnew \
 				ft_lstdelone \
 				ft_lstclear \
 				ft_lstiter \
+				ft_lstmap \
 
 BONUS_SRCS = $(addsuffix .c, $(BONUS_FUNCS))
 BONUS_OBJECTS = $(addsuffix .o, $(BONUS_FUNCS))

@@ -23,6 +23,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		tmp = node->next;
 		ft_lstdelone(node, del);
-		node = next;
+		node = tmp;
 	}
 }

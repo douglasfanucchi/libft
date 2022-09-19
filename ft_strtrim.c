@@ -6,15 +6,20 @@
 /*   By: dfanucch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:26:27 by dfanucch          #+#    #+#             */
-/*   Updated: 2022/09/12 12:26:28 by dfanucch         ###   ########.fr       */
+/*   Updated: 2022/09/19 22:03:33 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ft_forbidden_char(char c, char const *set)
+static char	ft_forbidden_char(char c, char const *set)
 {
-	return (ft_strchr(set, c));
+	char	*ptr;
+
+	ptr = ft_strchr(set, c);
+	if (!ptr)
+		return (0);
+	return (1);
 }
 
 static size_t	ft_forbidden_chars_at_start(char const *s, char const *set)

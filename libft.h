@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:59:02 by coder             #+#    #+#             */
-/*   Updated: 2022/09/07 21:04:44 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/19 22:01:25 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdbool.h>
-# include <stdint.h>
 
 enum e_state {
 	OUT,

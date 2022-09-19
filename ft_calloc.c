@@ -6,7 +6,7 @@
 /*   By: dfanucch <dfanucch@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:01:12 by dfanucch          #+#    #+#             */
-/*   Updated: 2022/09/10 00:01:12 by dfanucch         ###   ########.fr       */
+/*   Updated: 2022/09/19 22:01:50 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t	size_max;
 
-	if (size != 0 && nmemb > SIZE_MAX / size)
+	size_max = -1;
+	if (size != 0 && nmemb > size_max / size)
 		return ((void *)0);
 	if (nmemb == 0 || size == 0)
 	{

@@ -72,6 +72,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-exec: re
-	gcc -Wall -Werror -Wall main.c libft.a && clear && ./a.out

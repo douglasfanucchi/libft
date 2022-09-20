@@ -56,7 +56,7 @@ all: $(NAME)
 bonus: $(BONUS_OBJECTS)
 
 $(BONUS_OBJECTS): $(BONUS_SRCS)
-	$(CC) $(CCFLAGS) -c $(BONUS_SRCS)				 
+	$(CC) $(CCFLAGS) -c $(BONUS_SRCS)
 	ar -rc $(NAME) $(BONUS_OBJECTS)
 
 $(NAME): $(OBJECTS)

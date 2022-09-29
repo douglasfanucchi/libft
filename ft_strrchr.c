@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dfanucch <dfanucch@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 10:59:48 by dfanucch          #+#    #+#             */
-/*   Updated: 2022/09/08 10:59:50 by dfanucch         ###   ########.fr       */
+/*   Created: 2022/09/29 15:04:24 by dfanucch          #+#    #+#             */
+/*   Updated: 2022/09/29 15:04:46 by dfanucch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	first_char;
+	char	*s_trav;
 
-	first_char = *s;
-	while (*s)
-		s++;
-	while (*s != first_char && *s != (unsigned char)c)
-		s--;
-	if (*s == (unsigned char)c)
-		return ((char *)s);
+	s_trav = (char *)s;
+	while (*s_trav)
+		s_trav++;
+	while (s_trav != s && *s_trav != (unsigned char)c)
+		s_trav--;
+	if (*s_trav == (unsigned char)c)
+		return ((char *)s_trav);
 	return (NULL);
 }

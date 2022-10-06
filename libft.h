@@ -6,7 +6,7 @@
 /*   By: dfanucch <dfanucch@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:31:01 by dfanucch          #+#    #+#             */
-/*   Updated: 2022/09/19 22:31:39 by dfanucch         ###   ########.fr       */
+/*   Updated: 2022/10/06 15:09:35 by dfanucch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	ft_isspace(char c);
+void	ft_pustr(char *str);
 
 #endif

@@ -16,6 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 enum e_state {
 	OUT,
 	IN
@@ -76,5 +80,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	ft_isspace(char c);
 void	ft_putstr(char *str);
+char	*get_next_line(int fd);
 
 #endif

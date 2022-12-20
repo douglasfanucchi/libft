@@ -81,5 +81,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	ft_isspace(char c);
 void	ft_putstr(char *str);
 char	*get_next_line(int fd);
+t_list	**ft_newlist(void);
 
 #endif

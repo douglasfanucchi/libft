@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-	#include <ctype.h>
 	#include <libft.h>
 }
 

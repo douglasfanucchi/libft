@@ -1,5 +1,5 @@
 NAME=libft.a
-FILES:=ft_isalpha ft_isdigit
+FILES:=ft_isalpha ft_isdigit ft_isalnum
 OBJECTS=$(FILES:=.o)
 
 all: $(NAME)
@@ -8,7 +8,7 @@ $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
 %.o: %.c
-	cc -Wall -Werror -Wextra -c $< -o $@
+	cc -I. -Wall -Werror -Wextra -c $< -o $@
 
 tests: all
 	@cd tests && \

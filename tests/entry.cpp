@@ -2,3 +2,4 @@
 #include "ft_isdigit_test.cc"
 #include "ft_isalnum_test.cc"
 #include "ft_isascii_test.cc"
+#include "ft_isprint_test.cc"

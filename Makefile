@@ -1,5 +1,5 @@
 NAME=libft.a
-FILES:=ft_isalpha ft_isdigit ft_isalnum
+FILES:=ft_isalpha ft_isdigit ft_isalnum ft_isascii
 OBJECTS=$(FILES:=.o)
 
 all: $(NAME)

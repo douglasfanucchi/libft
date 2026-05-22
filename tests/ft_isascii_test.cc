@@ -11,6 +11,7 @@ TEST(FTisAscii, itShouldReturn0ForNonAsciiValues) {
 	int result = ft_isascii(input);
 
 	ASSERT_EQ(expected, result);
+	ASSERT_EQ(expected, ft_isascii(-1));
 }
 
 TEST(FTisAscii, itShouldReturn1ForAsciiValidValues) {

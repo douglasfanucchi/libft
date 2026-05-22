@@ -1,9 +1,11 @@
 NAME=libft.a
+FILES:=ft_isalpha ft_isdigit
+OBJECTS=$(FILES:=.o)
 
 all: $(NAME)
 
-$(NAME): ft_isalpha.o
-	ar rcs $(NAME) ft_isalpha.o
+$(NAME): $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 %.o: %.c
 	cc -Wall -Werror -Wextra -c $< -o $@

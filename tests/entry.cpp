@@ -1,5 +1,1 @@
-#include <gtest/gtest.h>
-
-TEST(hello, world) {
-    ASSERT_EQ(1, 1);
-}
+#include "ft_isalpha_test.cc"

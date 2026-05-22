@@ -13,3 +13,12 @@ TEST(FTisDigit, itShouldReturn0ForNonDigitsChars) {
 
 	ASSERT_EQ(expected, result);
 }
+
+TEST(FTisDigit, itShouldReturn1ForDigitsChars) {
+	char input = '9';
+	int expected = 1;
+
+	int result = ft_isdigit(input);
+
+	ASSERT_EQ(expected, result);
+}

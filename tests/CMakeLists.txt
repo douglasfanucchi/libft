@@ -24,6 +24,15 @@ target_link_libraries(
   tests
   GTest::gtest_main
 )
+target_link_libraries(
+  tests
+  ${CMAKE_SOURCE_DIR}/../libft.a
+)
+target_include_directories(
+  tests
+  PUBLIC
+  ${CMAKE_SOURCE_DIR}/..
+)
 
 include(GoogleTest)
 gtest_discover_tests(tests)

@@ -22,3 +22,12 @@ TEST(FTisAlpha, itShouldReturn1ForLowerCaseAlphaInputs) {
 
 	ASSERT_EQ(expected, result);
 }
+
+TEST(FTisAlpha, itShouldReturn1ForUpperCaseAlphaInputs) {
+	char input = 'A';
+	int expected = 1;
+
+	int result = ft_isalpha(input);
+
+	ASSERT_EQ(expected, result);
+}

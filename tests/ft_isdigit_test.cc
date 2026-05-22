@@ -5,7 +5,7 @@ extern "C" {
 }
 
 TEST(FTisDigit, itShouldReturn0ForNonDigitsChars) {
-	char input = '\\';
+	int input = '\\';
 	int expected = 0;
 
 	int result = ft_isdigit(input);
@@ -14,7 +14,7 @@ TEST(FTisDigit, itShouldReturn0ForNonDigitsChars) {
 }
 
 TEST(FTisDigit, itShouldReturn1ForDigitsChars) {
-	char input = '9';
+	int input = '9';
 	int expected = 1;
 
 	int result = ft_isdigit(input);

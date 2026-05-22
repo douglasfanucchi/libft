@@ -5,7 +5,7 @@ extern "C" {
 }
 
 TEST(FTisAlpha, itShouldReturn0ForNonAlphaInputs) {
-	char input = '\\';
+	int input = '\\';
 	int expected = 0;
 
 	int result = ft_isalpha(input);
@@ -14,7 +14,7 @@ TEST(FTisAlpha, itShouldReturn0ForNonAlphaInputs) {
 }
 
 TEST(FTisAlpha, itShouldReturn1ForLowerCaseAlphaInputs) {
-	char input = 'a';
+	int input = 'a';
 	int expected = 1;
 
 	int result = ft_isalpha(input);
@@ -23,7 +23,7 @@ TEST(FTisAlpha, itShouldReturn1ForLowerCaseAlphaInputs) {
 }
 
 TEST(FTisAlpha, itShouldReturn1ForUpperCaseAlphaInputs) {
-	char input = 'A';
+	int input = 'A';
 	int expected = 1;
 
 	int result = ft_isalpha(input);

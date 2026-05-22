@@ -11,3 +11,11 @@ TEST(FTstrlen, itShouldReturn0ForAnEmptyString) {
 
 	ASSERT_EQ(expected, result);
 }
+
+TEST(FTstrlen, itShouldReturn1ForAStringWithSingleChar) {
+	int expected = 1;
+
+	size_t result = ft_strlen("a");
+
+	ASSERT_EQ(expected, result);
+}

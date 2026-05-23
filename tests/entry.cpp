@@ -8,3 +8,4 @@
 #include "ft_bzero_test.cc"
 #include "ft_memcpy_test.cc"
 #include "ft_memmove_test.cc"
+#include "ft_strlcpy_test.cc"

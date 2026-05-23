@@ -12,3 +12,13 @@ TEST(FTmemmove, itSouldCopyAByteFromSrcToDest) {
 	ASSERT_EQ('a', dest[0]);
 	free(dest);
 }
+
+TEST(FTmemmove, itShouldNotCopyAnyBytesToDest) {
+	char *dest = (char *)malloc(sizeof(char) * 1);
+	dest[0] = 'z';
+
+	ft_memmove(dest, "a", 0);
+
+	ASSERT_EQ('z', dest[0]);
+	free(dest);
+}

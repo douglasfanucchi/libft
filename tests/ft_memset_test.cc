@@ -13,3 +13,11 @@ TEST(FTmemset, itShouldFillFirstCharacterWithSomeConstantChar) {
 
 	ASSERT_STREQ("aouglas", buffer);
 }
+
+TEST(FTmemset, itShouldReturnSamePointerAsTheOnePassedInTheInput) {
+	char buffer[8];
+
+	void *result = ft_memset(buffer, 0, 1);
+
+	ASSERT_EQ(buffer, result);
+}

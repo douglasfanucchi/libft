@@ -1,6 +1,6 @@
 NAME=libft.a
 FILES:= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_strlen ft_memset\
-		ft_bzero ft_memcpy
+		ft_bzero ft_memcpy ft_memmove
 OBJECTS=$(FILES:=.o)
 
 all: $(NAME)

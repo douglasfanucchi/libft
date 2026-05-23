@@ -35,3 +35,13 @@ TEST(FTmemmove, itShouldCopyNBytesToDest) {
 
 	free(dest);
 }
+
+TEST(FTmemmove, itShouldReturnDest) {
+	char *dest = (char *)malloc(sizeof(char));
+
+	void *result = ft_memmove(dest, "", 0);
+
+	ASSERT_EQ(dest, result);
+
+	free(dest);
+}

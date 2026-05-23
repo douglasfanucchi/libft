@@ -23,3 +23,13 @@ TEST(FTstrlcat, itShouldCatanateNCaractersIntoString) {
 	ASSERT_EQ(11, result);
 	ASSERT_STREQ("hello world", buffer);
 }
+
+TEST(FTstrlcat, itShouldTruncateWhenFinalStringIsLargerThanDestSize) {
+	const char *src = "world";
+	char buffer[8] = {'h', 'e', 'l', 'l', 'o', ' ', 0};
+
+	size_t result = ft_strlcat(buffer, src, 8);
+
+	ASSERT_EQ(11, result);
+	ASSERT_STREQ("hello w", buffer);
+}

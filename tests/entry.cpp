@@ -10,3 +10,4 @@
 #include "ft_memmove_test.cc"
 #include "ft_strlcpy_test.cc"
 #include "ft_strlcat_test.cc"
+#include "ft_toupper_test.cc"

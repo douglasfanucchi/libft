@@ -48,3 +48,13 @@ TEST(FTstrlcpy, itSouldNotCopyAnything) {
 	ASSERT_EQ(5, result);
 	ASSERT_STREQ("a", dest);
 }
+
+TEST(FTstrlcpy, itShouldOnlyGuaranteeAnEmptyStringOnABufferOfSizeOne) {
+	const char *src = "hello";
+	char dest[2] = {'a', 0};
+
+	size_t result = ft_strlcpy(dest, src, 1);
+
+	ASSERT_EQ(5, result);
+	ASSERT_STREQ("", dest);
+}

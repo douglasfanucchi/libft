@@ -4,3 +4,4 @@
 #include "ft_isascii_test.cc"
 #include "ft_isprint_test.cc"
 #include "ft_strlen_test.cc"
+#include "ft_memset_test.cc"

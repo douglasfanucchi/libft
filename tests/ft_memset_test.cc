@@ -21,3 +21,13 @@ TEST(FTmemset, itShouldReturnSamePointerAsTheOnePassedInTheInput) {
 
 	ASSERT_EQ(buffer, result);
 }
+
+TEST(FTmemset, itShouldFillTheFirstNPositionsWithConstantCharacter) {
+	int n = 7;
+	char buffer[n + 1];
+	buffer[n] = 0;
+
+	ft_memset(buffer, 'a', n);
+
+	ASSERT_STREQ("aaaaaaa", buffer);
+}

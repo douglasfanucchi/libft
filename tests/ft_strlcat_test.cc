@@ -13,3 +13,13 @@ TEST(FTstrlcat, itShouldCatanateSingleCharacterToString) {
 	ASSERT_EQ(2, result);
 	ASSERT_STREQ("ab", buffer);
 }
+
+TEST(FTstrlcat, itShouldCatanateNCaractersIntoString) {
+	const char *src = "world";
+	char buffer[12] = {'h', 'e', 'l', 'l', 'o', ' ', 0};
+	
+	size_t result = ft_strlcat(buffer, src, 12);
+
+	ASSERT_EQ(11, result);
+	ASSERT_STREQ("hello world", buffer);
+}

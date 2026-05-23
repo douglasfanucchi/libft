@@ -33,3 +33,13 @@ TEST(FTstrlcat, itShouldTruncateWhenFinalStringIsLargerThanDestSize) {
 	ASSERT_EQ(11, result);
 	ASSERT_STREQ("hello w", buffer);
 }
+
+TEST(FTstrlcat, itShouldNotCatanateAnything) {
+	const char *src = "world";
+	char buffer[1] = {0};
+
+	size_t result = ft_strlcat(buffer, src, 1);
+
+	ASSERT_EQ(5, result);
+	ASSERT_STREQ("", buffer);
+}

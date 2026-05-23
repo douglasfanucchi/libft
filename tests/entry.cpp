@@ -7,3 +7,4 @@
 #include "ft_memset_test.cc"
 #include "ft_bzero_test.cc"
 #include "ft_memcpy_test.cc"
+#include "ft_memmove_test.cc"

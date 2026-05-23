@@ -45,3 +45,14 @@ TEST(FTmemmove, itShouldReturnDest) {
 
 	free(dest);
 }
+
+TEST(FTmemmove, itShouldSafelyCopyOverlappedMemories) {
+	char *memmory = (char *)malloc(sizeof(char *) * 7);
+	strcpy(memmory, "hello");
+
+	char *result = (char *)ft_memmove(memmory + 1, memmory, 5);
+
+	ASSERT_STREQ("hello", result);
+
+	free(memmory);
+}

@@ -38,3 +38,13 @@ TEST(FTstrlcpy, itShouldTruncateStringThatIsLargerThanBufferSize) {
 	ASSERT_EQ(5, result);
 	ASSERT_STREQ("h", dest);
 }
+
+TEST(FTstrlcpy, itSouldNotCopyAnything) {
+	const char *src = "hello";
+	char dest[2] = {'a', 0};
+
+	size_t result = ft_strlcpy(dest, src, 0);
+
+	ASSERT_EQ(5, result);
+	ASSERT_STREQ("a", dest);
+}

@@ -16,3 +16,15 @@ TEST(FTstrlcpy, itShoudlCopyStringWithSingleCharToDest) {
 
 	free(dest);
 }
+
+TEST(FTstrlcpy, itShouldCopyAStringWithNCharactersToDest) {
+	int n = 5;
+	const char *src = "hello";
+	char *dest = (char *)malloc(sizeof(char) * (n + 1));
+
+	size_t result = ft_strlcpy(dest, src, n + 1);
+
+	ASSERT_STREQ(src, dest);
+
+	free(dest);
+}

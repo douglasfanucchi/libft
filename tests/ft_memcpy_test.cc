@@ -25,3 +25,15 @@ TEST(FTmemcpy, itShouldNotCopyAnyBytes) {
 	EXPECT_EQ('z', dest[0]);
 	free(0);
 }
+
+TEST(FTmemcpy, itShouldCopyNBytes) {
+	int n = 5;
+	const char *src = "hello world";
+	char *dest = (char *)malloc(sizeof(char) * (n + 1));
+	dest[n] = 0;
+
+	ft_memcpy(dest, src, n);
+
+	EXPECT_STREQ("hello", dest);
+	free(dest);
+}

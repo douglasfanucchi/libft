@@ -12,3 +12,12 @@ TEST(FTbzero, itShouldEraseFirstByteFromInput) {
 
 	ASSERT_STREQ("", buffer);
 }
+
+TEST(FTbzero, itShouldNotEraseAnyBytes) {
+	char buffer[12];
+	strcpy(buffer, "hello world");
+
+	ft_bzero(buffer, 0);
+
+	ASSERT_STREQ(buffer, "hello world");
+}

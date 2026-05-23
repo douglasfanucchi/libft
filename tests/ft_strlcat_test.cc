@@ -43,3 +43,13 @@ TEST(FTstrlcat, itShouldNotCatanateAnything) {
 	ASSERT_EQ(5, result);
 	ASSERT_STREQ("", buffer);
 }
+
+TEST(FTstrlcat, itShouldNotCatanateAnythingAndItShouldReturnFinalSizeBasedOnDSIZEPassedAsParameter) {
+	const char *src = "world";
+	char buffer[12] = {'h', 'e', 'l', 'l', 'o', ' ', 0};
+
+	size_t result = ft_strlcat(buffer, src, 1);
+
+	ASSERT_EQ(5, result);
+	ASSERT_STREQ("hello ", buffer);
+}

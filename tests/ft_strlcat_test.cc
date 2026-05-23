@@ -1,0 +1,15 @@
+#include <gtest/gtest.h>
+
+extern "C" {
+	#include <libft.h>
+}
+
+TEST(FTstrlcat, itShouldCatanateSingleCharacterToString) {
+	const char *src = "b";
+	char buffer[3] = {'a', 0};
+
+	size_t result = ft_strlcat(buffer, src, 3);
+
+	ASSERT_EQ(2, result);
+	ASSERT_STREQ("ab", buffer);
+}

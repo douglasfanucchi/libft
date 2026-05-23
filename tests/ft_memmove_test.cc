@@ -2,6 +2,7 @@
 
 extern "C" {
 	#include <libft.h>
+	#include <string.h>
 }
 
 TEST(FTmemmove, itSouldCopyAByteFromSrcToDest) {
@@ -20,5 +21,17 @@ TEST(FTmemmove, itShouldNotCopyAnyBytesToDest) {
 	ft_memmove(dest, "a", 0);
 
 	ASSERT_EQ('z', dest[0]);
+	free(dest);
+}
+
+TEST(FTmemmove, itShouldCopyNBytesToDest) {
+	size_t n = 4;
+	const char *src = "hey";
+	char *dest = (char *)malloc(sizeof(char) * 4);
+
+	ft_memmove(dest, src, n);
+
+	ASSERT_STREQ(src, dest);
+
 	free(dest);
 }

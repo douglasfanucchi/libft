@@ -11,3 +11,11 @@ TEST(FTstrrchr, itShouldReturnLastOccurenceOfAByte) {
 
 	ASSERT_EQ(str + 3, result);
 }
+
+TEST(FTstrrchr, itShouldReturnNULLWhenByteIsNotFound) {
+	const char *str = "hello";
+
+	const char *result = ft_strrchr(str, 'w');
+
+	ASSERT_EQ(NULL, result);
+}

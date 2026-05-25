@@ -17,3 +17,4 @@
 #include "ft_strncmp_test.cc"
 #include "ft_memcmp_test.cc"
 #include "ft_strnstr_test.cc"
+#include "ft_atoi_test.cc"

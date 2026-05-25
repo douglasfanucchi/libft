@@ -39,3 +39,12 @@ TEST(FTstrncmp, itShouldReturnPositiveNumberWhenFirstStringUsesCharGreaterThan12
 
 	ASSERT_TRUE(result > 0);
 }
+
+TEST(FTstrncmp, itSHouldCompareAtMostNBytesOrWhenItFindsANullTerminatedByte) {
+	const char *s1 = "hello\0!";
+	const char *s2 = "hello";
+
+	int result = ft_strncmp(s1, s2, 7);
+
+	ASSERT_EQ(0, result);
+}

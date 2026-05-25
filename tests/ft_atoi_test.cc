@@ -23,3 +23,14 @@ TEST(FTatoi, itShouldReturnOneDigitNegativeNumberAsInt)
 
 	ASSERT_EQ(-1, result);
 }
+
+TEST(FTatoi, itShouldReturnMultipleDigitsNumberAsInt)
+{
+	int result = ft_atoi("10");
+
+	ASSERT_EQ(10, result);
+
+	result = ft_atoi("-10");
+
+	ASSERT_EQ(-10, result);
+}

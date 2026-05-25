@@ -30,3 +30,12 @@ TEST(FTstrncmp, itShouldReturnNegativeNumberForFirstStringLessThanSecondForTheNB
 
 	ASSERT_TRUE(result < 0);
 }
+
+TEST(FTstrncmp, itShouldReturnPositiveNumberWhenFirstStringUsesCharGreaterThan127) {
+	const char *s1 = "\xff ello";
+	const char *s2 = "h ello";
+
+	int result = ft_strncmp(s1, s2, 1);
+
+	ASSERT_TRUE(result > 0);
+}

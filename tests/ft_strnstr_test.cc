@@ -30,3 +30,12 @@ TEST(FTstrnstr, itShouldReturnNullWhenOcurrenceIsNotFound) {
 
 	ASSERT_EQ(NULL, result);
 }
+
+TEST(FTstrntr, itShouldReturnNullWhenItWouldBeNeededToLookupToMoreThanNBytes) {
+	const char *haystack = "-hello world";
+	const char *search = "hello";
+
+	char *result = ft_strnstr(haystack, search, 5);
+
+	ASSERT_EQ(NULL, result);
+}

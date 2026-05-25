@@ -15,6 +15,8 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LIBBSD REQUIRED libbsd)
 
 add_executable(
   tests
@@ -27,6 +29,7 @@ target_link_libraries(
 target_link_libraries(
   tests
   ${CMAKE_SOURCE_DIR}/../libft.a
+  ${LIBBSD_LIBRARIES}
 )
 target_include_directories(
   tests

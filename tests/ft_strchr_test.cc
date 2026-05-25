@@ -19,3 +19,11 @@ TEST(FTstrchr, itShouldReturnNullWhenNotFindingAnyOccurrence) {
 
 	ASSERT_EQ(NULL, result);
 }
+
+TEST(FTstrchr, itShouldReturnNullTerminatedByte) {
+	const char *str = "hello";
+
+	char *result = ft_strchr(str, 0);
+
+	ASSERT_EQ(str + 5, result);
+}

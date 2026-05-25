@@ -21,3 +21,12 @@ TEST(FTstrnstr, itShouldReturnFirstOccurrenceLookingUpToNBytesOnHaystack) {
 
 	ASSERT_EQ(haystack, result);
 }
+
+TEST(FTstrnstr, itShouldReturnNullWhenOcurrenceIsNotFound) {
+	const char *haystack = "hello world";
+	const char *search = "hi";
+
+	char *result = ft_strnstr(haystack, search, ft_strlen(haystack));
+
+	ASSERT_EQ(NULL, result);
+}

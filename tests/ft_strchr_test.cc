@@ -11,3 +11,11 @@ TEST(FTstrchr, itShouldFindFirstByteOccurrence) {
 
 	ASSERT_EQ(str + 2, result);
 }
+
+TEST(FTstrchr, itShouldReturnNullWhenNotFindingAnyOccurrence) {
+	const char *str = "hello";
+
+	char *result = ft_strchr(str, 'x');
+
+	ASSERT_EQ(NULL, result);
+}

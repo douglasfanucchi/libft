@@ -2,6 +2,7 @@
 
 extern "C" {
 	#include <libft.h>
+	#include <bsd/string.h>
 }
 
 TEST(FTstrnstr, itShouldReturnFirstOccurrenceOfTheWordInsideHaystack) {

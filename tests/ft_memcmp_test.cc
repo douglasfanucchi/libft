@@ -30,3 +30,12 @@ TEST(FTmemcmp, itShouldReturnPositiveNumbersWhenFirstMemoryUsesUnsignedCharAndSe
 
 	ASSERT_TRUE(result > 0);
 }
+
+TEST(FTmemcmp, itShouldReturnNegativeNumberWhenFirstMemoryHasLowerByteAtFirstDifference) {
+	const char *m1 = "\x00\x7e";
+	const char *m2 = "\x00\x7f";
+
+	int result = ft_memcmp(m1, m2, 2);
+
+	ASSERT_TRUE(result < 0);
+}

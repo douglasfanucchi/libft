@@ -21,3 +21,12 @@ TEST(FTstrncmp, itShouldReturnPositiveNumberForFirstStringGreaterThanSecondForTh
 
 	ASSERT_TRUE(result > 0);
 }
+
+TEST(FTstrncmp, itShouldReturnNegativeNumberForFirstStringLessThanSecondForTheNBytesComparision) {
+	const char *s1 = "hello";
+	const char *s2 = "hemlo";
+
+	int result = ft_strncmp(s1, s2, 3);
+
+	ASSERT_TRUE(result < 0);
+}

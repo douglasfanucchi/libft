@@ -17,5 +17,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t dsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+char	*ft_strchr(const char *str, int c);
 
 #endif

@@ -48,3 +48,12 @@ TEST(FTstrnstr, itShouldReturnHaystackWhenSearchStringIsEmpty) {
 
 	ASSERT_EQ(haystack, result);
 }
+
+TEST(FTstrnstr, itShouldReturnNullWhenOccurrenceIsAfterNullTerminatedByte) {
+	const char *haystack = "hello\0world";
+	const char *search = "world";
+
+	char *result = ft_strnstr(haystack, search, 11);
+
+	ASSERT_EQ(NULL, result);
+}

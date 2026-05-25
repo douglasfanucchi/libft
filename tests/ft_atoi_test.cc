@@ -9,3 +9,10 @@ TEST(FTatoi, itShouldReturnZeroOnNonNumberString) {
 
 	ASSERT_EQ(0, result);
 }
+
+TEST(FTatoi, itShouldReturnOneDigitNumberAsInt)
+{
+	int result = ft_atoi("1");
+
+	ASSERT_EQ(1, result);
+}

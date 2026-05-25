@@ -34,3 +34,9 @@ TEST(FTatoi, itShouldReturnMultipleDigitsNumberAsInt)
 
 	ASSERT_EQ(-10, result);
 }
+
+TEST(FTatoi, itShouldReturnMin32BitsInt) {
+	int result = ft_atoi("-2147483648");
+
+	ASSERT_EQ(-2147483648, result);
+}

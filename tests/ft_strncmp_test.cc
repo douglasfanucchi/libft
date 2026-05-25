@@ -12,3 +12,12 @@ TEST(FTstrncmp, itShouldReturnZeroForMatchingNBytes) {
 
 	ASSERT_EQ(0, result);
 }
+
+TEST(FTstrncmp, itShouldReturnPositiveNumberForFirstStringGreaterThanSecondForTheNBytesComparision) {
+	const char *s1 = "hemlo";
+	const char *s2 = "hello";
+
+	int result = ft_strncmp(s1, s2, 3);
+
+	ASSERT_TRUE(result > 0);
+}

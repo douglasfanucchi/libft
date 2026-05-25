@@ -21,3 +21,12 @@ TEST(FTmemcmp, itShouldReturnPositiveNumberWhenFirstMemoryHasGreaterByteAtFirstD
 
 	ASSERT_TRUE(result > 0);
 }
+
+TEST(FTmemcmp, itShouldReturnPositiveNumbersWhenFirstMemoryUsesUnsignedCharAndSecondDoesntAtFirstDifference) {
+	const char *m1 = "\xff";
+	const char *m2 = "\x7f";
+
+	int result = ft_memcmp(m1, m2, 1);
+
+	ASSERT_TRUE(result > 0);
+}

@@ -11,3 +11,10 @@ TEST(FTcalloc, itShouldReturnMemoryWithNBytesFilledWithZeros) {
 		ASSERT_EQ(0, mem[i]);
 	free(mem);
 }
+
+TEST(FTcalloc, itShouldReturnNullOnInvalidSpaceRequired) {
+	void *mem = ft_calloc(1e5, 1e5);
+
+	ASSERT_EQ(NULL, mem);
+	free(mem);
+}

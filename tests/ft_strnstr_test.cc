@@ -39,3 +39,12 @@ TEST(FTstrntr, itShouldReturnNullWhenItWouldBeNeededToLookupToMoreThanNBytes) {
 
 	ASSERT_EQ(NULL, result);
 }
+
+TEST(FTstrnstr, itShouldReturnHaystackWhenSearchStringIsEmpty) {
+	const char *haystack = "hello world";
+	const char *search = "";
+
+	char *result = ft_strnstr(haystack, "", 5);
+
+	ASSERT_EQ(haystack, result);
+}

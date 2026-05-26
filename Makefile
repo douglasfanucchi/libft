@@ -17,6 +17,6 @@ tests: all
 	cmake -S . -B build &&\
 	cmake --build build &&\
 	cd build &&\
-	ctest --output-on-failure
+	valgrind --leak-check=full -q ctest --output-on-failure
 
 .PHONY: tests

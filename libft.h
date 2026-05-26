@@ -27,5 +27,6 @@ char 	*ft_strnstr(const char *haystack, const char *search, size_t n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *str);
+char	*ft_substr(const char *str, unsigned int i, size_t len);
 
 #endif

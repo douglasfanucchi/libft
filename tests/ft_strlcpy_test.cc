@@ -58,3 +58,12 @@ TEST(FTstrlcpy, itShouldOnlyGuaranteeAnEmptyStringOnABufferOfSizeOne) {
 	ASSERT_EQ(5, result);
 	ASSERT_STREQ("", dest);
 }
+
+TEST(FTstrlcpy, itShouldGuaranteeNullTerminatedByteOnString) {
+	const char *src = "hello";
+	char dest[7] = {'w', 'o', 'r', 'l', 'd', '!', 0};
+
+	ft_strlcpy(dest, src, 7);
+
+	ASSERT_STREQ("hello", dest);
+}

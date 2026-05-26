@@ -11,7 +11,7 @@ TEST(FTsubstr, itShouldCreateSubstringOfSizeNStartingFromIthIndex) {
 
 	char *result = ft_substr(src, i, n);
 
-	ASSERT_STREQ("hello", result);
+	ASSERT_STREQ("world", result);
 	ASSERT_NE(src + 6, result);
 	free(result);
 }

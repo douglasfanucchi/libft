@@ -22,3 +22,4 @@
 #include "ft_strdup_test.cc"
 #include "ft_substr_test.cc"
 #include "ft_strjoin_test.cc"
+#include "ft_strtrim_test.cc"

@@ -5,7 +5,7 @@ extern "C" {
 }
 
 TEST(FTstrjoin, itShouldConcatenateTwoStrings) {
-	const char *s1 = "hello";
+	const char *s1 = "hello ";
 	const char *s2 = "world";
 
 	char *result = ft_strjoin(s1, s2);

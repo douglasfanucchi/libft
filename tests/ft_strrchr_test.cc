@@ -27,3 +27,11 @@ TEST(FTstrrchr, itShouldReturnNullTerminatedByte) {
 
 	ASSERT_EQ(str + 5, result);
 }
+
+TEST(FTstrrchr, itShouldCompareCharsAsUnsignedChar) {
+	const char *str = "\xff";
+
+	const char *result = ft_strrchr(str, 255);
+
+	ASSERT_EQ(str, result);
+}

@@ -21,3 +21,4 @@
 #include "ft_calloc_test.cc"
 #include "ft_strdup_test.cc"
 #include "ft_substr_test.cc"
+#include "ft_strjoin_test.cc"

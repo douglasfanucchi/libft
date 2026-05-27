@@ -5,13 +5,14 @@ extern "C" {
 	#include <stdlib.h>
 }
 
-TEST(FTmemcpy, itShouldCopyByteFromSrcToDest) {
+TEST(FTmemcpy, itShouldCopyByteFromSrcToDestAndReturnDest) {
 	const char *src = "a";
 	char *dest = (char *)malloc(sizeof(char) * 1);
 
-	ft_memcpy(dest, src, 1);
+	void *result = ft_memcpy(dest, src, 1);
 
 	EXPECT_STREQ(src, dest);
+	EXPECT_EQ(dest, result);
 	free(dest);
 }
 

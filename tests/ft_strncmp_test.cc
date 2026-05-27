@@ -48,3 +48,9 @@ TEST(FTstrncmp, itSHouldCompareAtMostNBytesOrWhenItFindsANullTerminatedByte) {
 
 	ASSERT_EQ(0, result);
 }
+
+TEST(FTstrncmp, itShouldReturnZeroWhenBytesToCompareIsZero) {
+	int result = ft_strncmp("hello", "a", 0);
+
+	ASSERT_EQ(0, result);
+}

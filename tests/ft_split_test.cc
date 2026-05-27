@@ -62,3 +62,12 @@ TEST(FTsplit, itShouldPreventSegFaultWhenDelimiterIsNullTerminatedByte) {
 		free(result[i++]);
 	free(result);	
 }
+
+TEST(FTsplit, itShouldReturnArrayContainingOnlyNullValueWhenStringHasOnlyDelimiters) {
+	const char *src  = "     ";
+
+	char **result = ft_split(src, ' ');
+
+	ASSERT_EQ(NULL, result[0]);
+	free(result);
+}

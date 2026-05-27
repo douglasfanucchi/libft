@@ -33,3 +33,10 @@ TEST(FTstrjoin, itShouldReturnNewCopyFromSecondStringWhenFirstIsNULL) {
 	ASSERT_NE(s, result);
 	free(result);
 }
+
+TEST(FTstrjoin, itShouldReturnEmptyStringWhenBothParametersAreNULL) {
+	char *result = ft_strjoin(NULL, NULL);
+
+	ASSERT_STREQ("", result);
+	free(result);
+}

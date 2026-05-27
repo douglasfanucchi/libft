@@ -50,3 +50,15 @@ TEST(FTsplit, itShouldSkipDelimitersFromBeginingAndSplitWords) {
 		free(result[i++]);
 	free(result);
 }
+
+TEST(FTsplit, itShouldPreventSegFaultWhenDelimiterIsNullTerminatedByte) {
+	const char *src = "          hello world";
+
+	char **result = ft_split(src, '\0');
+
+	ASSERT_STREQ("          hello world", result[0]);
+	size_t	i = 0;
+	while (result[i])
+		free(result[i++]);
+	free(result);	
+}

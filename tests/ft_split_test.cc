@@ -24,3 +24,16 @@ TEST(FTsplit, itShouldSeparateSingleStringIntoTwo) {
 		free(result[i++]);
 	free(result);
 }
+
+TEST(FTsplit, itShouldSkipSequencedDelimiters) {
+	const char *src = "hello       world";
+
+	char **result = ft_split(src, ' ');
+
+	ASSERT_STREQ("hello", result[0]);
+	ASSERT_STREQ("world", result[1]);
+	size_t	i = 0;
+	while (result[i])
+		free(result[i++]);
+	free(result);
+}

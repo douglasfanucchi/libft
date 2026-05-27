@@ -23,3 +23,13 @@ TEST(FTstrjoin, itShouldReturnNewCopyFromFirstStringWhenSecondIsNULL) {
 	ASSERT_NE(s1, result);
 	free(result);
 }
+
+TEST(FTstrjoin, itShouldReturnNewCopyFromSecondStringWhenFirstIsNULL) {
+	const char *s = "hello";
+
+	char *result = ft_strjoin(NULL, s);
+
+	ASSERT_STREQ(s, result);
+	ASSERT_NE(s, result);
+	free(result);
+}

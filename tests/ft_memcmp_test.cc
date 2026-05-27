@@ -39,3 +39,12 @@ TEST(FTmemcmp, itShouldReturnNegativeNumberWhenFirstMemoryHasLowerByteAtFirstDif
 
 	ASSERT_TRUE(result < 0);
 }
+
+TEST(FTmemcmp, itShouldReturnZeroWhenBytesToCompareIsEqualToZero) {
+	const char *m1 = "\x7e";
+	const char *m2 = "\x7f";
+
+	int result = ft_memcmp(m1, m2, 0);
+
+	ASSERT_EQ(0, result);
+}

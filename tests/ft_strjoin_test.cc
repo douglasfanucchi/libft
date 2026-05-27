@@ -13,3 +13,13 @@ TEST(FTstrjoin, itShouldConcatenateTwoStrings) {
 	ASSERT_STREQ("hello world", result);
 	free(result);
 }
+
+TEST(FTstrjoin, itShouldReturnNewCopyFromFirstStringWhenSecondIsNULL) {
+	const char *s1 = "hello";
+
+	char *result = ft_strjoin(s1, NULL);
+
+	ASSERT_STREQ(s1, result);
+	ASSERT_NE(s1, result);
+	free(result);
+}

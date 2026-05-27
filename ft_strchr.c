@@ -7,7 +7,7 @@ char	*ft_strchr(const char *str, int c)
 
 	i = 0;
 	len = ft_strlen(str);
-	while (i <= len && str[i] != c)
+	while (i <= len && (unsigned char)str[i] != (unsigned char)c)
 		i++;
 	if (i > len)
 		return ((void *)0);

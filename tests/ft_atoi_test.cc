@@ -46,3 +46,9 @@ TEST(FTatoi, itShouldSkipSpacesAndComputeNumber) {
 
 	ASSERT_EQ(-1, result);
 }
+
+TEST(FTatoi, itShouldAcceptPlusSignIndicatingThatNumberIsPositive) {
+	int result = ft_atoi("+5");
+
+	ASSERT_EQ(5, result);
+}

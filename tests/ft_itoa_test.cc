@@ -14,3 +14,11 @@ TEST(FTitoa, itShouldReturnStringRepresentationOfOneDigitNonNegativeNumber) {
 	ASSERT_STREQ("9", result);
 	free(result);
 }
+
+TEST(FTitoa, itShouldReturnStringRepresentationOfMultipleDigitsNonNegativeNumber)
+{
+	char *result = ft_itoa(2147483647);
+
+	ASSERT_STREQ("2147483647", result);
+	free(result);
+}

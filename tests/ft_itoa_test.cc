@@ -22,3 +22,11 @@ TEST(FTitoa, itShouldReturnStringRepresentationOfMultipleDigitsNonNegativeNumber
 	ASSERT_STREQ("2147483647", result);
 	free(result);
 }
+
+TEST(FTitoa, itShouldReturnStringRepresentationOfOneDigitNegativeNumber)
+{
+	char *result = ft_itoa(-1);
+
+	ASSERT_STREQ("-1", result);
+	free(result);
+}

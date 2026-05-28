@@ -8,6 +8,8 @@ char *ft_strnstr(const char *haystack, const char *search, size_t n)
 
 	i = 0;
 	len = ft_strlen(search);
+	if (!len && !haystack[0])
+		return ((char *)haystack);
 	while (i < n && haystack[i])
 	{
 		j = 0;

@@ -24,3 +24,4 @@
 #include "ft_strjoin_test.cc"
 #include "ft_strtrim_test.cc"
 #include "ft_split_test.cc"
+#include "ft_itoa_test.cc"

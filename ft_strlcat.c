@@ -21,6 +21,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dsize)
 		return(dest_len + src_len);
 	free_space = dsize - dest_len - 1;
 	ft_memmove(dest + dest_len, src, ft_min(src_len, free_space));
-	dest[dest_len + src_len] = 0;
+	dest[dest_len + ft_min(src_len, free_space)] = 0;
 	return (dest_len + src_len);
 }

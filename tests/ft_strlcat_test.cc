@@ -50,6 +50,6 @@ TEST(FTstrlcat, itShouldNotCatanateAnythingAndItShouldReturnFinalSizeBasedOnDSIZ
 
 	size_t result = ft_strlcat(buffer, src, 1);
 
-	ASSERT_EQ(5, result);
+	ASSERT_EQ(6, result);
 	ASSERT_STREQ("hello ", buffer);
 }

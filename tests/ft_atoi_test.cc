@@ -40,3 +40,9 @@ TEST(FTatoi, itShouldReturnMin32BitsInt) {
 
 	ASSERT_EQ(-2147483648, result);
 }
+
+TEST(FTatoi, itShouldSkipSpacesAndComputeNumber) {
+	int result = ft_atoi("\t\n\v\f\r -1");
+
+	ASSERT_EQ(-1, result);
+}

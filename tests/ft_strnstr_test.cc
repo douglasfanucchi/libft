@@ -57,3 +57,12 @@ TEST(FTstrnstr, itShouldReturnNullWhenOccurrenceIsAfterNullTerminatedByte) {
 
 	ASSERT_EQ(NULL, result);
 }
+
+TEST(FTstrnstr, itShouldReturnNulByteFromEmptyStringWhenSearchingForIt) {
+	const char *haystack = "";
+	const char *search = "";
+
+	char *result = ft_strnstr(haystack, search, 0);
+
+	ASSERT_EQ(haystack, result);
+}

@@ -30,3 +30,11 @@ TEST(FTitoa, itShouldReturnStringRepresentationOfOneDigitNegativeNumber)
 	ASSERT_STREQ("-1", result);
 	free(result);
 }
+
+TEST(FTitoa, itShouldReturnStringRepresentationOfMultipleDigitNegativeNumber)
+{
+	char *result = ft_itoa(-2147483648);
+
+	ASSERT_STREQ("-2147483648", result);
+	free(result);
+}

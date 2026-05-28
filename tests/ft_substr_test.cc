@@ -16,14 +16,15 @@ TEST(FTsubstr, itShouldCreateSubstringOfSizeNStartingFromIthIndex) {
 	free(result);
 }
 
-TEST(FTsubstr, itShouldReturnNullWhenInvalidIndexIsPassed) {
+TEST(FTsubstr, itShouldReturnEmptyStringWhenInvalidIndexIsPassed) {
 	unsigned int i = 11;
 	size_t n = 2;
 	const char *src = "hello world";
 
 	char *result = ft_substr(src, i, n);
 	
-	ASSERT_EQ(NULL, result);
+	ASSERT_STREQ("", result);
+	free(result);
 }
 
 TEST(FTsubstr, itShouldReturnStringWithAtMostSizeNStartingFromIthIndex) {

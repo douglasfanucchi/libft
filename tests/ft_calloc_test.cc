@@ -13,7 +13,7 @@ TEST(FTcalloc, itShouldReturnMemoryWithNBytesFilledWithZeros) {
 }
 
 TEST(FTcalloc, itShouldReturnNullOnInvalidSpaceRequired) {
-	void *mem = ft_calloc(1e5, 1e5);
+	void *mem = ft_calloc(SIZE_MAX, SIZE_MAX);
 
 	ASSERT_EQ(NULL, mem);
 	free(mem);

@@ -33,3 +33,18 @@ TEST(FTputnbrfd, itShouldPrintOnFdAMultipleDigitPositiveNumber) {
 	close(fd[0]);
 	close(fd[1]);
 }
+
+TEST(FTputnbrfd, itShouldPrintOnFdASingleDigitNegativeNumber) {
+	int fd[2];
+	pipe(fd);
+	char result[3];
+
+	ft_putnbr_fd(-1, fd[1]);
+	read(fd[0], result, 2);
+	result[2] = 0;
+
+	ASSERT_STREQ("-1", result);
+
+	close(fd[0]);
+	close(fd[1]);
+}

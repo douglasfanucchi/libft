@@ -48,3 +48,18 @@ TEST(FTputnbrfd, itShouldPrintOnFdASingleDigitNegativeNumber) {
 	close(fd[0]);
 	close(fd[1]);
 }
+
+TEST(FTputnbrfd, itShouldPrintOnFdAMultipleDigitNegativeNumber) {
+	int fd[2];
+	pipe(fd);
+	char result[12];
+
+	ft_putnbr_fd(-2147483648, fd[1]);
+	read(fd[0], result, 11);
+	result[11] = 0;
+
+	ASSERT_STREQ("-2147483648", result);
+
+	close(fd[0]);
+	close(fd[1]);
+}

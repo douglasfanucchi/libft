@@ -18,3 +18,18 @@ TEST(FTputnbrfd, itShouldPrintOnFdASingleDigitPositiveNumber) {
 	close(fd[0]);
 	close(fd[1]);
 }
+
+TEST(FTputnbrfd, itShouldPrintOnFdAMultipleDigitPositiveNumber) {
+	int fd[2];
+	pipe(fd);
+	char result[11];
+
+	ft_putnbr_fd(2147483647, fd[1]);
+	read(fd[0], result, 10);
+	result[10] = 0;
+
+	ASSERT_STREQ("2147483647", result);
+
+	close(fd[0]);
+	close(fd[1]);
+}

@@ -52,5 +52,6 @@ void	ft_lstadd_back(t_list **head, t_list *_new);
 void	ft_lstdelone(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*f)(void *));
 void	ft_lstiter(t_list *node, void (*f)(void *));
+t_list	*ft_lstmap(t_list *node, void *(*f)(void *), void (*del)(void *));
 
 #endif

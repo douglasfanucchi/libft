@@ -12,3 +12,12 @@ TEST(FTlist, itShouldCreateANewFreeableNodeWithNULLAsContentAndNext) {
 
 	free(node);
 }
+
+TEST(FTlist, itShouldCreateANewFreeableNodeWithIntegerAsContentAndNULLAsNextValue) {
+	int number = 42;
+	t_list	*node = ft_lstnew(&number);
+
+	ASSERT_EQ(42, *((int*)node->content));
+
+	free(node);
+}

@@ -29,3 +29,4 @@
 #include "ft_putnbr_fd_test.cc"
 #include "ft_lstnew_test.cc"
 #include "ft_lstadd_front_test.cc"
+#include "ft_lstsize_test.cc"

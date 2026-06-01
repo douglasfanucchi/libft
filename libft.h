@@ -50,5 +50,6 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *head);
 void	ft_lstadd_back(t_list **head, t_list *_new);
 void	ft_lstdelone(t_list *lst, void (*f)(void *));
+void	ft_lstclear(t_list **lst, void (*f)(void *));
 
 #endif

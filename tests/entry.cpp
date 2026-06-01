@@ -32,3 +32,4 @@
 #include "ft_lstsize_test.cc"
 #include "ft_lstlast_test.cc"
 #include "ft_lstadd_back_test.cc"
+#include "ft_lstmap_test.cc"

@@ -27,3 +27,4 @@
 #include "ft_itoa_test.cc"
 #include "ft_strmapi_test.cc"
 #include "ft_putnbr_fd_test.cc"
+#include "ft_lstnew_test.cc"

@@ -31,3 +31,4 @@
 #include "ft_lstadd_front_test.cc"
 #include "ft_lstsize_test.cc"
 #include "ft_lstlast_test.cc"
+#include "ft_lstadd_back_test.cc"

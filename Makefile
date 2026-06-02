@@ -15,6 +15,14 @@ $(NAME): $(OBJECTS)
 %.o: %.c
 	cc -I. -Wall -Werror -Wextra -c $< -o $@
 
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
 tests: all
 	@cd tests && \
 	cmake -S . -B build &&\

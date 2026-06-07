@@ -74,8 +74,8 @@ You should run `cc -L. main.c -lft` where `.` is passed as a value to `-L` meani
 | ft_lstsize | `int ft_lstsize(t_list *lst)` | Counts the number of nodes in a list. | Number of nodes |
 | ft_lstlast | `t_list *ft_lstlast(t_list *head)` | Returns the last node of a list. | Pointer to last node or `NULL` |
 | ft_lstadd_back | `void ft_lstadd_back(t_list **head, t_list *_new)` | Adds a node at the end of a list. It may change the pointer `*lst` if the list was empty. | None |
-| ft_lstdelone | `void ft_lstdelone(t_list *lst, void (*f)(void *))` | Deletes a node and frees its content. | None |
-| ft_lstclear | `void ft_lstclear(t_list **lst, void (*f)(void *))` | Deletes and frees all nodes in a list. | None |
+| ft_lstdelone | `void ft_lstdelone(t_list *lst, void (*f)(void *))` | Deletes a node and apply `f` to its content. | None |
+| ft_lstclear | `void ft_lstclear(t_list **lst, void (*f)(void *))` | Deletes and frees all nodes in a list. It applies `f` to every node content. | None |
 | ft_lstiter | `void ft_lstiter(t_list *node, void (*f)(void *))` | Applies a function to each node content. | None |
 | ft_lstmap | `t_list *ft_lstmap(t_list *node, void *(*f)(void *), void (*del)(void *))` | Creates a new list by iterating the list that starts at `node`, it will apply `f` to each node content generating the content of the corresponding node of the new list. If any node of the new list fails to create, it will clear the already created nodes applying `del` to its contents. | Pointer to new list or `NULL` |
 

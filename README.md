@@ -53,6 +53,7 @@ You should run `cc -L. main.c -lft` where `.` is passed as a value to `-L` meani
 | ft_strrchr | `char *ft_strrchr(const char *str, int c)` | Locates last occurrence of `c` in str. | Pointer to matched character or `NULL` |
 | ft_strncmp | `int ft_strncmp(const char *s1, const char *s2, size_t n)` | Compares up to `n` bytes of two strings. It considers each byte to be `unsigned char`. | < 0, 0, or > 0 if s1 is less, equal or greater than s2 |
 | ft_memcmp | `int ft_memcmp(const void *m1, const void *m2, size_t n)` | Compares n bytes of memory areas. It considers each byte to be `unsigned char`. | < 0, 0, or > 0 if m1 is less, equal or greater than m2 |
+| ft_memchr | `void *memchr(const void *s, int c, size_t n)` | It scans the first `n` bytes of the memory pointed to by `s` for the first instance of `c`. Both `c` and the bytes of the memory area pointed by `s` are interpreted as `unsigned char`. |
 | ft_strnstr | `char *ft_strnstr(const char *haystack, const char *search, size_t n)` | It checks the first `n` bytes of `haystack` searching for `search`. | Pointer to first occurrence or `NULL` |
 | ft_atoi | `int ft_atoi(const char *str)` | Converts a string to an integer. | Converted integer value |
 | ft_calloc | `void *ft_calloc(size_t nmemb, size_t size)` | Allocates and zeroes memory for an array. | Pointer to allocated memory or `NULL` |

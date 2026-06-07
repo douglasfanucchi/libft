@@ -66,3 +66,12 @@ TEST(FTstrnstr, itShouldReturnNulByteFromEmptyStringWhenSearchingForIt) {
 
 	ASSERT_EQ(haystack, result);
 }
+
+TEST(FTstrnstr, itShouldScanUpToSourceLengthBytes) {
+	const char *haystack = "hello";
+	const char *search = "hello";
+
+	char *result = ft_strnstr(haystack, search, 6);
+
+	ASSERT_EQ(haystack, result);
+}

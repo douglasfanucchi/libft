@@ -75,3 +75,13 @@ TEST(FTstrnstr, itShouldScanUpToSourceLengthBytes) {
 
 	ASSERT_EQ(haystack, result);
 }
+
+TEST(FTstrnstr, itShouldReturnHaystackWhenSearchIsEmptyAndBytesToLookupIsZero)
+{
+	const char *haystack = "hello";
+	const char *search  = "";
+
+	char *result = ft_strnstr(haystack, search, 0);
+
+	ASSERT_EQ(haystack, result);
+}

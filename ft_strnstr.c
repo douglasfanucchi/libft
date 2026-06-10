@@ -9,9 +9,9 @@ char *ft_strnstr(const char *haystack, const char *search, size_t n)
 
 	i = 0;
 	len = ft_strlen(search);
-	haystack_len = ft_strlen(haystack);
-	if (!len && !haystack[0])
+	if (!len)
 		return ((char *)haystack);
+	haystack_len = ft_strlen(haystack);
 	if (n > haystack_len)
 		n = haystack_len;
 	while (i < n && haystack[i])
